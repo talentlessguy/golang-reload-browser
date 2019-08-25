@@ -1,6 +1,6 @@
 # Golang page reloader
 
-** I forked the repository to add go module and custom port.**
+__I forked the repository to add go module and custom port.__
 
 This is a small sample application implemented in Golang which can programmatically refresh a tab in a browser.
 It is accompanying a blog post I've written about the subject with all the details: .
