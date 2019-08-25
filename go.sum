@@ -1,0 +1,4 @@
+github.com/gorilla/websocket v1.4.1 h1:q7AeDBpnBk8AogcD4DSag/Ukw/KV+YhzLj2bP5HvKCM=
+github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/talentlessguy/golang-reload-browser v0.0.0-20161030140103-1d5c07701966 h1:Q/9wrAMrGagrwlXL771ANsQ5gggtqS/PZFfE//Iv2I8=
+github.com/talentlessguy/golang-reload-browser v0.0.0-20161030140103-1d5c07701966/go.mod h1:Wr0d4Pun9689WSg+MP2ZhYky4KJ+6onJ5hsQWOc92cg=

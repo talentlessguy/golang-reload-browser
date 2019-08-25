@@ -1,5 +1,7 @@
 # Golang page reloader
 
+** I forked the repository to add go module and custom port.**
+
 This is a small sample application implemented in Golang which can programmatically refresh a tab in a browser.
 It is accompanying a blog post I've written about the subject with all the details: .
 
@@ -7,18 +9,16 @@ It hosts a small WebSocket service with a single `reload` endpoint, to which we 
 
 ## Usage
 
-First, compile the application by running the script `build.sh`, it'll put the output in the file `bin/reload`.
+Install dependencies:
 
-```
-./build.sh
-```
-
-Then start up the application.
-
-```
-bin/reload
+```sh
+go mod download
 ```
 
-Then open the static file `reloadtest.html` in the browser.
+Then run go files:
 
-Every time we press Enter in the terminal, the page should display a message. If we uncomment the `location.reload()` call, then instead of printing a message, the tab will be refreshed.
+```
+go run *.go
+```
+
+Open a browser and press "Enter" in console.
