@@ -8,6 +8,7 @@ import (
 
 var hub *Hub
 
+// StartReloadServer - start reloading server with websockets
 func StartReloadServer(port string) {
 	hub = newHub()
 	go hub.run()
@@ -16,19 +17,20 @@ func StartReloadServer(port string) {
 	})
 
 	go StartServer(port)
-	log.Println("Reload server listening at", port)
 }
 
+// StartServer - launch static server
 func StartServer(port string) {
 	http.Handle("/", http.FileServer(http.Dir(".")))
 	err := http.ListenAndServe(port, nil)
 
 	if err != nil {
-		log.Println("Failed to start up the Reload server: ", err)
+		log.Println("Failed to start up dev server: ", err)
 		return
 	}
 }
 
+// SendReload - send socket with message "reload"
 func SendReload() {
 	message := bytes.TrimSpace([]byte("reload"))
 	hub.broadcast <- message
