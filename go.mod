@@ -1,4 +1,4 @@
-module golang-reload-browser
+module github.com/talentlessguy/golang-reload-browser
 
 go 1.12
 
