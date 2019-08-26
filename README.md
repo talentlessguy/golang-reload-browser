@@ -25,6 +25,8 @@ Open a browser and press "Enter" in console.
 
 ## Example
 
+Go code:
+
 ```go
 package main
 
@@ -32,7 +34,7 @@ import (
 	"bufio"
 	"log"
 	"os"
-	rl "talentlessguy/golang-reload-browser/reload"
+	rl "talentlessguy/golang-reload-browser"
 )
 
 func main() {
@@ -50,4 +52,44 @@ func main() {
 		rl.SendReload()
 	}
 }
+```
+
+HTML page:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reload test page</title>
+    <script>
+      const tryConnectToReload = address => {
+        const conn = new WebSocket(address)
+
+        conn.onclose = () => {
+          setTimeout(() => {
+            tryConnectToReload(address)
+          }, 2000)
+        }
+
+        conn.onmessage = evt => location.reload()
+      }
+      try {
+        if (window.WebSocket) {
+          // The reload endpoint is hosted on a statically defined port.
+          tryConnectToReload('ws://localhost:3000/reload')
+        } else {
+          console.log( 'Your browser does not support WebSockets :(')
+        }
+      } catch (e) {
+        console.error(`Exception during connecting to Reload: ${e}`)
+      }
+    </script>
+  </head>
+</html>
+```
+
+Then run go file:
+
+```sh
+go run main.go
 ```
