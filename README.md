@@ -7,18 +7,10 @@ It is accompanying a blog post I've written about the subject with all the detai
 
 It hosts a small WebSocket service with a single `reload` endpoint, to which we can connect from the browser, and send a message every time we want it to be reloaded.
 
-## Usage
-
-Install dependencies:
+## Install
 
 ```sh
-go mod download
-```
-
-Then run go files:
-
-```
-go run *.go
+go get -u -v talentlessguy/golang-reload-browser
 ```
 
 Open a browser and press "Enter" in console.
