@@ -10,7 +10,7 @@ It hosts a small WebSocket service with a single `reload` endpoint, to which we 
 ## Install
 
 ```sh
-go get -u -v talentlessguy/golang-reload-browser
+go get -u -v github.com/talentlessguy/golang-reload-browser
 ```
 
 Open a browser and press "Enter" in console.
